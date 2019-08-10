@@ -1,0 +1,148 @@
+<div *ngIf="projectInfo">
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Project Name</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.name" />
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Clinet Description</div>
+    <div class="col-md-10">
+      <textarea rows="10" [(ngModel)]="projectInfo.description"></textarea>
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.created" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.projectStage" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.evaluationDate" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.evaluationAmount" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.moneyRaised" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.acctualMoneySpent" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.executionStarted" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.finished" />
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.lastUpdated" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Created date</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="projectInfo.rowNo" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md12">
+      <h3>List of pictures of this project:</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <ng-container *ngFor="let pic of projectInfo.pictures">
+      <div class="col-md-1">
+        <select [(ngModel)]="pic.type">
+          <option value="0">Image</option>
+          <option value="1">Video</option>
+        </select>
+      </div>
+      <div class="col-md-10">
+        <input type="text" [(ngModel)]="pic.url" />
+      </div>
+      <div class="col-md-1">
+        <button (click)="RemovePicture(pic)">Remove</button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row" id="newImageInfo">
+    <div class="col-md-1">
+      <select [(ngModel)]="newPicture.type">
+        <option value="0">Image</option>
+        <option value="1">Video</option>
+      </select>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field style="width:100%">
+        <input type="text" placeholder="Avatar" aria-label="Avatar"
+               matInput [(ngModel)]="newPicture.url" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            <img [src]="option" style="height:30px" />
+            <span>{{option}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="col-md-1">
+      <button (click)="AddNewPicture()">Add</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="uploadImageArea">
+  <h3>Upload images</h3>
+  <h4>{{this.selectedFile?.name}}</h4>
+  <input type="file" #fileInput style="display:none;" (change)="OnChange($event)" />
+  <button type="button" (click)="fileInput.click()">Select file</button>
+  <button type="button" (click)="DoUpload()">Upload</button>
+</div>
+
+
+<button (click)="Save()">Save Changes</button>
+<button (click)="Cancel()">Cancel</button>
+
+

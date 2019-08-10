@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <img src="images/simurgh01.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+
+  <a class="navbar-brand" href="#">Simurgh</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [class.active]="_router.url==='/'">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" [class.active]="_router.url.startsWith('/project')">
+        <a class="nav-link" href="project-list">Projects</a>
+      </li>
+      <li class="nav-item" [class.active]="_router.url==='/about-us'">
+        <a class="nav-link" href="about-us">About Us</a>
+      </li>
+      <li class="nav-item" [class.active]="_router.url==='/partners'">
+        <a class="nav-link" href="/partners">Partners</a>
+      </li>
+      <li class="nav-item" [class.active]="_router.url==='/contact-us'">
+        <a class="nav-link" href="/contact-us">Contact Us</a>
+      </li>
+      <li class="nav-item" [class.active]="_router.url==='/blog'">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+#statistics
+{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+#statistics.card
+{
+  height:25vh;
+}
+
+.stat-icon {
+  text-align: center;
+  font-size: 50px;
+  margin: 20px;
+}
+.stat-title
+{
+  text-align:center;
+}

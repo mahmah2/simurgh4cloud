@@ -1,0 +1,20 @@
+input, textarea
+{
+  width:100%;
+}
+
+
+#newImageInfo {
+  border: 1px solid #000000;
+  border-radius:10px;
+  background-color:#fff8d3;
+}
+
+#uploadImageArea {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #c1fbfb;
+}
+
+
+

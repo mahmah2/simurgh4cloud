@@ -1,0 +1,22 @@
+.image-frame {
+  width: auto;
+  display: inline-block;
+}
+
+.modal-photo {
+  width: 90%;
+  height: auto;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+.mat-dialog-content
+{
+  max-height:100vh;
+}

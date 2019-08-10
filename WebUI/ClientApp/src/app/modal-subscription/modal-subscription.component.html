@@ -1,0 +1,35 @@
+<form #form1="ngForm">
+
+
+  <h1 mat-dialog-title>Subscribe to Simurgh's news.</h1>
+
+  <div mat-dialog-content>
+
+    <div class="col-md-12">
+      <div class="md-form mb-0">
+        <input type="text" #firstName="ngModel" name="firstName"
+               [(ngModel)]="subscriptionRequestModel.firstName" class="form-control"
+               ng-maxlength="150" maxlength="150">
+        <label for="firstName" class="">First name</label>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="md-form mb-0">
+        <input type="email" email required #email="ngModel" name="email"
+               [(ngModel)]="subscriptionRequestModel.email" class="form-control"
+               ng-maxlength="150" maxlength="150">
+        <label for="email" class="">Your email</label>
+        <small class="text-danger" [class.d-none]="email.valid || email.untouched">A valid email address is required.</small>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <div class="my-auto">
+      <button class="btn btn-primary" (click)="Cancel()">Close</button>
+      <button class="btn btn-primary" (click)="Subscribe()" [disabled]="isBusy || form1.form.invalid">Subscribe</button>
+    </div>
+  </div>
+
+</form>

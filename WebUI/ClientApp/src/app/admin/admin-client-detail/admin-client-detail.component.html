@@ -1,0 +1,116 @@
+<div *ngIf="clientInfo">
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Clinet Name</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="clientInfo.clientName" />
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Clinet Description</div>
+    <div class="col-md-10">
+      <textarea rows="10" [(ngModel)]="clientInfo.clientDescription"></textarea>
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Google Map Address</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="clientInfo.googleMapAddress" />
+    </div>
+  </div>
+
+  <div class="row mt-3">
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Avatar</div>
+    <div class="col-md-10">
+      <!--<input type="text" [(ngModel)]="clientInfo.avatar" />-->
+      <mat-form-field style="width:100%">
+        <input type="text" placeholder="Avatar" aria-label="Avatar"
+               matInput [(ngModel)]="clientInfo.avatar" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            <img [src]="option" style="height:30px" />
+            <span>{{option}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12"><img [src]="clientInfo.avatar" class="img-responsive" style="height:100px;" /></div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-2 rightaligned">Row No</div>
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="clientInfo.rowNo" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md12">
+      <h3>List of pictures of this client:</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <ng-container *ngFor="let pic of clientInfo.pictures">
+      <div class="col-md-1">
+        <select [(ngModel)]="pic.type">
+          <option value="0">Image</option>
+          <option value="1">Video</option>
+        </select>
+      </div>
+      <div class="col-md-10">
+        <input type="text" [(ngModel)]="pic.url" />
+      </div>
+      <div class="col-md-1">
+        <button (click)="RemovePicture(pic)">Remove</button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row" id="newImageInfo">
+    <div class="col-md-1">
+      <select [(ngModel)]="newPicture.type">
+        <option value="0">Image</option>
+        <option value="1">Video</option>
+      </select>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field style="width:100%">
+        <input type="text" placeholder="Avatar" aria-label="Avatar"
+               matInput [(ngModel)]="newPicture.url" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            <img [src]="option" style="height:30px" />
+            <span>{{option}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="col-md-1">
+      <button (click)="AddNewPicture()">Add</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="uploadImageArea">
+  <h3>Upload images</h3>
+  <h4>{{this.selectedFile?.name}}</h4>
+  <input type="file" #fileInput style="display:none;" (change)="OnChange($event)" />
+  <button type="button" (click)="fileInput.click()">Select file</button>
+  <button type="button" (click)="DoUpload()">Upload</button>
+</div>
+
+
+<button (click)="Save()">Save Changes</button>
+<button (click)="Cancel()">Cancel</button>
+
+

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "filesystem",
+  "libraries": [
+    {
+      "library": "ClientApp/node_modules/simplelightbox/dist/",
+      "destination": "wwwroot/lib/dist/",
+      "files": [
+        "simple-lightbox.min.js",
+        "simplelightbox.min.css"
+      ]
+    }
+  ]
+}

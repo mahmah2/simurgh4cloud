@@ -1,0 +1,96 @@
+<div class="row mt-5">
+  <div class="col-md-12">
+    <h2 id="family-introduction">
+      Lorikeet family is living in remote places of Sistan and Balouchestan province of Iran.
+      They are disadvantaged from basic living amenities and utilities plus they are deprived from any kind of money making activities.
+    </h2>
+  </div>
+  <div class="col-md-12">
+    <iframe id="family-location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4391842.965895599!2d58.789367776186324!3d28.22707811997935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ee7373a9afe43d5%3A0xe92f486ae9df1408!2sSistan+and+Baluchestan+Province%2C+Iran!5e1!3m2!1sen!2sus!4v1560554452394!5m2!1sen!2sus"
+            frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="text-center">
+  <app-picture-gallery [pictures]="family1pictures"></app-picture-gallery>
+</div>
+
+<div class="row mt-5">
+  <div class="col-12">
+    <h2>List of projects that we have planned for this family:</h2>
+  </div>
+</div>
+
+<div class="row mt-1">
+  <div class="col-md-12">
+    <mat-accordion multi="true">
+      <mat-expansion-panel class="wow bounceInRight" data-wow-delay="0.2s">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Building Bathroom and Shower</h3>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4 class="col-12">
+          In this project we will build a Bathroom and Shower for this family.
+        </h4>
+
+        <app-project-progress stage="4"></app-project-progress>
+
+        <h4 class="col-12">Pictures from site:</h4>
+
+        <app-picture-gallery [pictures]="project1pictures"></app-picture-gallery>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel class="wow bounceInRight" data-wow-delay="0.4s">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Building a kitchen area</h3>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4 class="col-12">
+          In this project we will build a decent kitchen area for this family.
+        </h4>
+
+        <app-project-progress stage="2"></app-project-progress>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="wow bounceInRight" data-wow-delay="0.6s">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Painting room and fixing roof</h3>
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4 class="col-12">
+          In this project we will paint the room and fix the roof for this family.
+        </h4>
+
+
+        <app-project-progress stage="2"></app-project-progress>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+
+  </div>
+</div>
+
+
+<app-donation></app-donation>
+
+
+
+
+

@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-12 col-sm-4">
+    <div class="card">
+      <img class="icon" src="images/icon/ruller.svg" />
+      <div class="card-body">
+        <div class="stat-title">
+          Evaluation:<br />
+          <ng-container [ngSwitch]="stage">
+            <ng-container *ngSwitchCase="1">
+              <img src="images/hourglass.svg" />In Progress
+            </ng-container>
+            
+            <ng-container *ngSwitchDefault>
+              <img src="images/checked.svg" />Done
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-4">
+    <div class="card">
+      <img class="icon" src="images/icon/money.svg" />
+      <div class="card-body">
+        <div class="stat-title">
+          Money Raising:<br />
+          <ng-container [ngSwitch]="stage">
+            <ng-container *ngSwitchCase="1">-</ng-container>
+            <ng-container *ngSwitchCase="2">
+              <img src="images/hourglass.svg" />In Progress
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <img src="images/checked.svg" />Done
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-4">
+    <div class="card">
+      <img class="icon" src="images/icon/hard-hat.svg" />
+      <div class="card-body">
+        <div class="stat-title">
+          Execution:<br />
+          <ng-container [ngSwitch]="stage">
+            <ng-container *ngSwitchCase="1">-</ng-container>
+            <ng-container *ngSwitchCase="2">-</ng-container>
+            <ng-container *ngSwitchCase="3">
+              <img src="images/hourglass.svg" />In Progress
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <img src="images/checked.svg" />Done
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

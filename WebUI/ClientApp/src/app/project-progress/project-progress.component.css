@@ -1,0 +1,25 @@
+.card {
+  text-align: center;
+  padding: 10px;
+}
+
+
+  .card .icon {
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.stat-title img
+{
+   height : 20px;
+   display: inline;
+}
+
+
+.card-body
+{
+  font-size:2em;
+  line-height:1em;
+}

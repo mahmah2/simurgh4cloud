@@ -1,0 +1,91 @@
+<!--Section: Contact v.2-->
+<section class="mb-4">
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">
+    Do you have any questions? <br />
+    Do you know any projects that we can participate? <br />
+    Please do not hesitate to contact us directly.
+  </p>
+
+  <div class="row">
+
+
+    <div class="col-md-12 mb-md-0 mb-5">
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <input type="text" required #fullName1="ngModel" name="fullName1"
+                     [class.is-invalid]="fullName1.invalid && fullName1.touched"
+                     [(ngModel)]="contactRequestModel.fullName" class="form-control"
+                     ng-maxlength="150" maxlength="150">
+              <label for="fullName1" class="">Your full name</label>
+              <small class="text-danger" [class.d-none]="fullName1.valid || fullName1.untouched">Full name is required.</small>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <input type="email" email required #email="ngModel" name="email"
+                     [(ngModel)]="contactRequestModel.email" class="form-control"
+                     ng-maxlength="150" maxlength="150">
+              <label for="email" class="">Your email</label>
+              <small class="text-danger" [class.d-none]="email.valid || email.untouched">A valid email address is required.</small>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="md-form mb-0">
+              <input type="text" required #subject="ngModel" name="subject"
+                     [(ngModel)]="contactRequestModel.subject" class="form-control"
+                     ng-maxlength="200" maxlength="200">
+              <label for="subject" class="">Subject</label>
+              <small class="text-danger" [class.d-none]="subject.valid || subject.untouched">Subject is required.</small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+
+
+          <div class="col-md-12">
+
+            <div class="md-form">
+              <textarea type="text" required #body="ngModel" name="body" [(ngModel)]="contactRequestModel.body"
+                        rows="5" uiactions="expand" class="form-control md-textarea"
+                        ng-maxlength="1500" maxlength="1500"></textarea>
+              <label for="message">Your message</label>
+              <small class="text-danger" [class.d-none]="body.valid || body.untouched">Message content is required.</small>
+            </div>
+
+          </div>
+        </div>
+        <div class="row" style="margin:0px">
+          <re-captcha (resolved)="onResolved($event)" siteKey="6Ld2CqoUAAAAACBg4OyyKyng1RG_jrHIkmTKQUPa"></re-captcha>
+        </div>
+
+        <div class="row" style="margin:0px">
+          <button type="submit" class="btn btn-primary" [disabled]="isBusy || !verified || contactForm.form.invalid">Send</button>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+</section>
+

@@ -1,0 +1,35 @@
+<div class="col centeraligned">
+  <h1>List of clients :</h1>
+</div>
+<div class="row">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Client Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.clientName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="operations">
+      <mat-header-cell *matHeaderCellDef> Operations </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a [routerLink]="['/admin/client/', element.id]">Edit</a> |
+        <a [routerLink]="['/admin/client-projects/', element.id]">Projects</a>
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<div class="row">
+  <button (click)="addNewClient()">Add new client</button>
+</div>

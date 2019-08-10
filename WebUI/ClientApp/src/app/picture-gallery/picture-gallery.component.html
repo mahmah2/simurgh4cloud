@@ -1,0 +1,12 @@
+<div class="row">
+  <div *ngFor="let picture of pictures" class="col-12 col-md-6 col-xl-4">
+
+
+    <img *ngIf="picture.type=='image'" (click)="showModal(picture.url)" class="img-responsive" [src]="picture.url" />
+    <div *ngIf="picture.type=='video'" class="videoWrapper">
+      <iframe [src]="picture.url | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
+  </div>
+</div>

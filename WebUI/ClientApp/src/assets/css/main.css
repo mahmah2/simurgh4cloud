@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+@import url("socialnetwork.css");
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size:1em;
+  color: #42454d;
+}
+
+body {
+  background-image: url("images/bg01.png");
+}
+
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+
+.halfpage {
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.fullpage {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.altband {
+  background-color: whitesmoke;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#project-list .card
+{
+  display:table-cell;
+  text-align:center;
+  vertical-align:central;
+}
+
+#project-list a
+{
+  text-decoration:none;
+}
+
+#project-list a:hover {
+  text-decoration: none;
+}
+
+.card {
+  margin: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+.card-title {
+  font-size: 2em;
+}
+
+.card-text {
+  font-size: 1em !important;
+  line-height: 26px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.card img {
+  max-width: 208px;
+  max-height: 242px;
+}
+
+
+.xxx-large-font {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 6em;
+}
+
+.xx-large-font {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 5em;
+}
+
+.stepper .label
+{
+  font-size: 1.5em !important;
+}
+
+.step-content p {
+  font-size: 1.3em !important;
+}
+
+.rightaligned {
+  text-align: center;
+}
+
+.leftaligned {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rightaligned {
+    text-align: right;
+  }
+
+  .leftaligned {
+    text-align: left;
+  }
+}
+
+
+.centeraligned {
+  text-align: center
+}
+
+.handwriting {
+  font-family: 'Playball', cursive;
+  font-size:x-large;
+}
+
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+.blue-snackbar {
+  background: #2196F3 !important;
+  color: black !important;
+  font-size: 1.5em;
+}
+
+.md-form
+{
+  margin-top:30px;
+}
+
+.md-form label
+{
+  font-size : 1.1em !important;
+  transform : translateY(8px);
+}
